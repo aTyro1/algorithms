@@ -21,7 +21,7 @@ void m_less_than_one(int x1,int y1,int x2,int y2,int xp,int yp)
 			y1=y1+yp;
 			p=d2y-d2x+p;
 		}
-		putpixel(x1,y1,7);
+		putpixel(x1,y1,8);
 		i++;
 	}
 	while(i<dx);
@@ -46,7 +46,7 @@ void m_greater_than_one(int x1,int y1,int x2,int y2,int xp,int yp)
 			x1=x1+xp;
 			p=d2x-d2y+p;
 		}
-		putpixel(x1,y1,7);
+		putpixel(x1,y1,8);
 		i++;
 	}
 	while(i<dy);
@@ -105,9 +105,25 @@ int main()
        int gd=DETECT,gm,x1,x2,y1,y2,m;
 	clrscr();
 	initgraph(&gd,&gm,"c:\\TURBOC3\\BGI");
-	drawline(100,100,300,100);
-	drawline(200,200,100,100);
-	drawline(200,200,300,100);
+	setcolor(8);
+	drawline(150,100,150,350);
+	drawline(150,350,400,350);
+	drawline(400,350,400,100);
+	drawline(175,225,240,225);
+	drawline(240,225,240,165);
+	drawline(240,165,175,165);
+	drawline(175,165,175,225);
+	drawline(270,130,375,130);
+	drawline(375,130,375,330);
+	drawline(375,330,270,330);
+	drawline(270,330,270,130);
+	drawline(125,100,425,100);
+	drawline(125,100,275,50);
+	drawline(275,50,425,100);
+	setfillstyle(SOLID_FILL,8);
+	floodfill(200,80,8);
+	floodfill(275,275,8);
+	floodfill(200,200,8);
 	getch();
 	closegraph();
 	return 0;
